@@ -4,6 +4,7 @@ import cn.ezios.spring.april.thirtieth.dao.CustomerDao;
 import cn.ezios.spring.april.thirtieth.entities.Customer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
@@ -21,7 +22,7 @@ public class SchoolController {
     @Resource
     private CustomerDao customerDao;
 
-    @RequestMapping("stu_list")
+    @GetMapping("stu_list")
     public String stu_list(Model model,String id){
         model.addAttribute("title","这是标题");
         Customer customer = customerDao.selectById(id);
